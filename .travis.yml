@@ -6,7 +6,9 @@ before_install:
   - docker image ls
 
 script:
-  - mkdir {content,static}
+  - ls -l site
+  - mkdir site/content
+  - mkdir site/static
   - docker run -v $(pwd)/site/:/site abaranov/hugo hugo
 
 deploy:
