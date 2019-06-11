@@ -1,0 +1,20 @@
+services:
+  - docker
+
+before_install:
+  - docker build -t abaranov/hugo -f Dockerfile.dev .
+  - docker image ls
+
+script:
+  - mkdir {content,static}
+  - docker run -v $(pwd)/site/:/site abaranov/hugo hugo
+
+deploy:
+  provider: pages
+  local_dir: ./public
+  target_branch: gh-pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  on:
+    branch: master
