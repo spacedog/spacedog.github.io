@@ -1,8 +1,0 @@
-baseURL = ""
-languageCode = "en-us"
-title = "My Personal Web Page"
-theme = "basics"
-
-[params]
-author = "Anton Baranov"
-github = "spacedog"
