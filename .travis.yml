@@ -13,9 +13,9 @@ script:
 deploy:
   provider: pages
   local_dir: ./site/public
-  target_branch: gh-pages
+  target_branch: master
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: true
   on:
-    branch: master
+    branch: source
